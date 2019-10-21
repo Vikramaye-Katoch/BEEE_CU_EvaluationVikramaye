@@ -1,0 +1,49 @@
+int value=0;
+  
+void setup()
+{
+
+    pinMode(5,OUTPUT);
+    pinMode(4,OUTPUT);
+    pinMode(3,OUTPUT);
+    pinMode(2,OUTPUT);
+    pinMode(1,OUTPUT);
+     
+  Serial.begin(9600);
+}
+void loop()
+{
+int serial;
+  Serial.println(value);
+  analogWrite(1,value);
+  value=analogRead(8);
+  value=constrain(value,400,500);
+  value=map(value,400,500,225,0);
+  
+  
+  analogWrite(2,value);
+  
+  value=analogRead(8);
+  value=constrain(value,400,500);
+  value=map(value,400,500,225,0);
+  
+  Serial.println(value);
+  analogWrite(3,value);
+  delay(100);
+  value=analogRead(8);
+  value=constrain(value,400,500);
+  value=map(value,400,500,225,0);
+  
+  Serial.println(value);
+  analogWrite(4,value);
+  
+  value=analogRead(8);
+  value=constrain(value,400,500);
+  value=map(value,400,500,225,0);
+  
+  Serial.println(value);
+  analogWrite(5,value);
+  
+  delay(200);
+}
+
